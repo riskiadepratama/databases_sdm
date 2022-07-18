@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <title>DATA BARANG </title>
+    <title>DATA PERUSAHAAN</title>
   </head>
 
   <body>
@@ -44,19 +44,20 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header">
-              DATA BARANG
+              DATA PERUSAHAAN
             </div>
             <div class="card-body">
-              <a href="input.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a>
+              <a href="home.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a>
               <table class="table table-bordered" id="myTable">
                 <thead>
                   <tr>
-                  <th scope="col">id_barang</th>
+                  <th scope="col">id_perusahaan</th>
                     <th scope="col">nama</th>
-                    <th scope="col">Stock</th>
-                    <th scope="col">harga_modal</th>
-                    <th scope="col">harga_jual</th> 
-                    <th scope="col">taggal_masuk</th>
+                    <th scope="col">alamat</th>
+                    <th scope="col">hp</th>
+                    <th scope="col">email</th> 
+                    <th scope="col">tanggal_berdiri</th>
+                    <th scope="col">npwp</th>
                     
                   </tr>
                 </thead>
@@ -64,21 +65,22 @@
                   <?php 
                       include('../konek.php');
                       $no = 1;
-                      $query = mysqli_query($connection,"SELECT * FROM tb_barang");
+                      $query = mysqli_query($connection,"SELECT * FROM tb_perusahaan");
                       while($row = mysqli_fetch_array($query)){
                   ?>
 
                   <tr>
                       <td><?php echo $no++ ?></td>
                       <td><?php echo $row['nama'] ?></td>
-                      <td><?php echo $row['stock'] ?></td>
-                      <td><?php echo $row['harga_modal'] ?></td>
-                      <td><?php echo $row['harga_jual'] ?></td>
-                      <td><?php echo $row['tanggal_masuk'] ?></td>
+                      <td><?php echo $row['alamat'] ?></td>
+                      <td><?php echo $row['hp'] ?></td>
+                      <td><?php echo $row['email'] ?></td>
+                      <td><?php echo $row['tanggal_berdiri'] ?></td>
+                      <td><?php echo $row['npwp'] ?></td>
                       
                       <td class="text-center">
-                        <a href="edit.php?id=<?php echo $row['id_barang'] ?>" class="btn btn-sm btn-primary">EDIT</a>
-                        <a href="hapus.php?id=<?php echo $row['id_barang'] ?>" class="btn btn-sm btn-dark">HAPUS</a>
+                        <a href="edit.php?id=<?php echo $row['id_perusahaan'] ?>" class="btn btn-sm btn-primary">EDIT</a>
+                        <a href="hapus.php?id=<?php echo $row['id_perusahaan'] ?>" class="btn btn-sm btn-dark">HAPUS</a>
                       </td>
                   </tr>
 

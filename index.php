@@ -29,6 +29,9 @@
           <li class="nav-item">
           <a class="nav-link" href="../KASIR/tb_barang/index_bg.php"> BARANG</a> 
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../KASIR/tb_perusahaan/index_ps.php"> PERUSAHAAN</a> 
+          </li>
       </div>
   </div>
 </nav>
