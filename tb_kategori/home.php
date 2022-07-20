@@ -14,7 +14,7 @@
         <div class="col-md-8 offset-md-2">
           <div class="card">
             <div class="card-header">
-              TAMBAHKAN KATEGORI
+             TAMBAHKAN KATEGORI
 
             </div>
             <div class="card-body">
@@ -22,7 +22,7 @@
                 
                 <div class="form-group">
                   <label>Nama</label>
-                  <input type="text" name="nama" class="form-control">
+                  <input type="text" name="nama_kt" class="form-control" required>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-success">SIMPAN</button>

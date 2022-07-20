@@ -11,6 +11,8 @@
 
   <!-- nav bar -->
 
+<!-- nav bar -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +35,15 @@
           <li class="nav-item">
           <a class="nav-link" href="../tb_perusahaan/index_ps.php"> PERUSAHAAN</a> 
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_member/index_mm.php"> MEMBER</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_cabang/index_cb.php"> CABANG</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_kasir/index_ks.php"> KASIR</a> 
+          </li>
       </div>
   </div>
 </nav>
@@ -43,7 +54,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header">
+            <div class="card-footer ">
               DATA BARANG
             </div>
             <div class="card-body">
@@ -52,7 +63,9 @@
                 <thead>
                   <tr>
                   <th scope="col">id_barang</th>
-                    <th scope="col">nama</th>
+                  <th scope="col">nama_kt </th>
+                  <th scope="col">nama_sp</th>
+                    <th scope="col">nama_br</th>
                     <th scope="col">Stock</th>
                     <th scope="col">harga_modal</th>
                     <th scope="col">harga_jual</th> 
@@ -64,13 +77,19 @@
                   <?php 
                       include('../konek.php');
                       $no = 1;
-                      $query = mysqli_query($connection,"SELECT * FROM tb_barang");
+                      include('../konek.php');
+                      $no = 1;
+                      $query = mysqli_query($connection,"SELECT * FROM tb_barang 
+                      inner join tb_kategori on tb_kategori.id_kategori=tb_barang.id_kategori inner join tb_supplier on tb_supplier.id_supplier = tb_barang.id_supplier");
                       while($row = mysqli_fetch_array($query)){
+                  
                   ?>
 
                   <tr>
                       <td><?php echo $no++ ?></td>
-                      <td><?php echo $row['nama'] ?></td>
+                      <td><?php echo $row['nama_kt'] ?></td>
+                      <td><?php echo $row['nama_sp'] ?></td>
+                      <td><?php echo $row['nama_br'] ?></td>
                       <td><?php echo $row['stock'] ?></td>
                       <td><?php echo $row['harga_modal'] ?></td>
                       <td><?php echo $row['harga_jual'] ?></td>

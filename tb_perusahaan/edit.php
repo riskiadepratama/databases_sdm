@@ -35,34 +35,34 @@
 
                 <div class="form-group">
                   <label>Nama</label>
-                  <input type="text" name="nama" value="<?php echo $row['nama'] ?>"  class="form-control">
+                  <input type="text" name="nama_pn" value="<?php echo $row['nama_pn'] ?>"  class="form-control" required>
                   <input type="hidden" name="id_supplier" value="<?php echo $row['id_perusahaan'] ?>">
                 </div>
 
                 
                 <div class="form-group">
                   <label>Alamat</label>
-                  <input type="text" name="alamat" value="<?php echo $row['alamat'] ?>" class="form-control">
+                  <input type="text" name="alamat" value="<?php echo $row['alamat'] ?>" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                   <label>No HP</label>
-                  <input type="bigint" name="hp" value="<?php echo $row['hp'] ?>" class="form-control">
+                  <input type="bigint" name="hp" value="<?php echo $row['hp'] ?>" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="email" name="email" value="<?php echo $row['email'] ?>" class="form-control">
+                  <input type="email" name="email" value="<?php echo $row['email'] ?>" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                   <label>tanggal berdiri</label>
-                  <input type="date" name="tanggal_berdiri" value="<?php echo $row['tanggal_berdiri'] ?>" class="form-control">
+                  <input type="date" name="tanggal_berdiri" value="<?php echo $row['tanggal_berdiri'] ?>" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                   <label>NpWp</label>
-                  <input type="bigint" name="npwp" value="<?php echo $row['npwp'] ?>" class="form-control">
+                  <input type="bigint" name="npwp" value="<?php echo $row['npwp'] ?>" class="form-control" required>
                 </div>
                <br>
                 <button type="submit" class="btn btn-success">UPDATE</button>

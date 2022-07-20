@@ -4,7 +4,7 @@
   
   $id = $_GET['id'];
   
-  $query = "SELECT * FROM tb_supplier WHERE id_supplier = $id LIMIT 1";
+  $query = "SELECT * FROM tb_member WHERE id_member = $id LIMIT 1";
 
   $result = mysqli_query($connection, $query);
 
@@ -28,15 +28,15 @@
         <div class="col-md-8 offset-md-2">
           <div class="card">
             <div class="card-header">
-              EDIT SUPPLIER
+              EDIT BARANG
             </div>
             <div class="card-body">
               <form action="update.php" method="POST">
 
-                <div class="form-group">
+              <div class="form-group">
                   <label>Nama</label>
                   <input type="text" name="nama" value="<?php echo $row['nama'] ?>"  class="form-control" required>
-                  <input type="hidden" name="id_supplier" value="<?php echo $row['id_supplier'] ?>">
+                  <input type="hidden" name="id_member" value="<?php echo $row['id_member'] ?>">
                 </div>
 
                 <div class="form-group">
@@ -50,13 +50,14 @@
                 </div>
 
                 <div class="form-group">
-                  <label>No Rekening</label>
-                  <input type="bigint" name="no_rekening" value="<?php echo $row['no_rekening'] ?>" class="form-control" required>
-                </div>
-               <br>
-                <button type="submit" class="btn btn-success">UPDATE</button>
-                <button type="reset" class="btn btn-warning">RESET</button>
+                  <label>Jenis_kelamin</label><br>
+                    <input type="radio"  name="jenis_kelamin" value="LAKI-LAKI" value="<?php echo $row['jenis_kelamin'] ?>" >
+                    <label for="laki-laki">LAKI-LAKI</label><br>
+                    <input type="radio"  name="jenis_kelamin" value="perempuan" value="<?php echo $row['jenis_kelamin'] ?>"  >
+                    <label for="perempuan">PEREMPUAN</label><br>
 
+               <button type="submit" class="btn btn-success">UPDATE</button>
+                <button type="reset" class="btn btn-warning">RESET</button>
               </form>
             </div>
           </div>

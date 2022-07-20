@@ -33,6 +33,15 @@
           <li class="nav-item">
           <a class="nav-link" href="../tb_perusahaan/index_ps.php"> PERUSAHAAN</a> 
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_member/index_mm.php"> MEMBER</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_cabang/index_cb.php"> CABANG</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_kasir/index_ks.php"> KASIR</a> 
+          </li>
       </div>
   </div>
 </nav>
@@ -71,7 +80,7 @@
 
                   <tr>
                       <td><?php echo $no++ ?></td>
-                      <td><?php echo $row['nama'] ?></td>
+                      <td><?php echo $row['nama_pn'] ?></td>
                       <td><?php echo $row['alamat'] ?></td>
                       <td><?php echo $row['hp'] ?></td>
                       <td><?php echo $row['email'] ?></td>

@@ -4,19 +4,20 @@
 include('../konek.php');
 
 //get data dari form
-$nama_sp           = $_POST['nama_sp'];
-$hp             = $_POST['hp'];
-$alamat         = $_POST['alamat'];
-$no_rekening    = $_POST['no_rekening'];
+$nama             = $_POST['nama'];
+$hp               = $_POST['hp'];
+$alamat           = $_POST['alamat'];
+$jenis_kelamin   = $_POST['jenis_kelamin'];
+
 
 //query insert data ke dalam database
-$query = "INSERT INTO tb_supplier (nama_sp, hp, alamat, no_rekening) VALUES ('$nama_sp', '$hp', '$alamat', '$no_rekening')";
+$query = "INSERT INTO tb_member (nama, hp, alamat, jenis_kelamin) VALUES ('$nama', '$hp', '$alamat', '$jenis_kelamin' )";
 
 //kondisi pengecekan apakah data berhasil dimasukkan atau tidak
 if($connection->query($query)) {
 
     //redirect ke halaman index.php 
-    header("location: index_sp.php");
+    header("location: index_mm.php");
 
 } else {
 

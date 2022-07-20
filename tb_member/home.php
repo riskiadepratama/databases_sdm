@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <title>Tambahkan Supplier</title>
+    <title>Tambahkan KATEGORI</title>
   </head>
 
   <body>
@@ -14,13 +14,11 @@
         <div class="col-md-8 offset-md-2">
           <div class="card">
             <div class="card-header">
-              TAMBAH SUPPLIER
+             TAMBAHKAN MEMBER
 
             </div>
             <div class="card-body">
-              <form action="koneksi.php" method="POST">
-
-             
+              <form action="koneksi.php" method="POST" >
                 
                 <div class="form-group">
                   <label>Nama</label>
@@ -28,7 +26,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label>No HP</label>
+                  <label>HP</label>
                   <input type="bigint" name="hp" class="form-control" required>
                 </div>
 
@@ -38,12 +36,17 @@
                 </div>
 
                 <div class="form-group">
-                  <label>No Rekening</label>
-                  <input type="bigint" name="no_rekening" class="form-control" required>
+                  <label>Jenis_kelamin</label><br>
+                    <input type="radio"  name="jenis_kelamin" value="LAKI-LAKI" >
+                    <label for="laki-laki">LAKI-LAKI</label><br>
+                    <input type="radio"  name="jenis_kelamin" value="perempuan" >
+                    <label for="perempuan">PEREMPUAN</label><br>
+                   
                 </div>
                 <br>
                 <button type="submit" class="btn btn-success">SIMPAN</button>
                 <button type="reset" class="btn btn-warning">RESET</button>
+
               </form>
             </div>
           </div>

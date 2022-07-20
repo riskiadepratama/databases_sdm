@@ -4,16 +4,19 @@
 include('../konek.php');
 
 //get data dari form
-$id_kategori      = $_POST['id_kategori'];
-$nama_kt           = $_POST['nama_kt'];
+$nama           = $_POST['nama'];
+$hp             = $_POST['hp'];
+$alamat          = $_POST['alamat'];
+$jenis_kelamin           = $_POST['jenis_kelamin'];
+
 
 //query update data ke dalam database berdasarkan ID
-$query = "UPDATE tb_kategori SET nama_kt = '$nama_kt' WHERE id_kategori = '$id_kategori'";
+$query = "INSERT INTO tb_member (nama, hp, alamat, jenis_kelamin) VALUES ('$nama', '$hp', '$alamat', '$jenis_kelamin')";
 
 //kondisi pengecekan apakah data berhasil diupdate atau tidak
 if($connection->query($query)) {
     //redirect ke halaman index.php 
-    header("location: index_kt.php");
+    header("location: index_mm.php");
 } else {
     //pesan error gagal update data
     echo "Data Gagal Diupate!";

@@ -35,7 +35,7 @@
 
                 <div class="form-group">
                   <label>Nama</label>
-                  <input type="text" name="nama" value="<?php echo $row['nama'] ?>"  class="form-control">
+                  <input type="text" name="nama_kt" value="<?php echo $row['nama_kt'] ?>"  class="form-control" required>
                   <input type="hidden" name="id_kategori" value="<?php echo $row['id_kategori'] ?>">
                 </div>
                <br>

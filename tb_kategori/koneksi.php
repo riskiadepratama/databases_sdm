@@ -4,10 +4,11 @@
 include('../konek.php');
 
 //get data dari form
-$nama           = $_POST['nama'];
+$id_kategori   = $_POST['id_kategori'];
+$nama_kt           = $_POST['nama_kt'];
 
 //query insert data ke dalam database
-$query = "INSERT INTO tb_kategori (nama) VALUES ('$nama')";
+$query = "INSERT INTO tb_kategori (id_kategori ,nama_kt) VALUES ('$id_kategori', '$nama_kt')";
 
 //kondisi pengecekan apakah data berhasil dimasukkan atau tidak
 if($connection->query($query)) {

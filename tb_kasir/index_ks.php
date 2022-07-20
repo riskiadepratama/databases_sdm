@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <title>DATA SUPPLIER</title>
+    <title>DATA BARANG </title>
   </head>
 
   <body>
-<!-- nav bar -->
+
+  <!-- nav bar -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container-fluid">
@@ -35,53 +36,65 @@
           <li class="nav-item">
           <a class="nav-link" href="../tb_member/index_mm.php"> MEMBER</a> 
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_cabang/index_cb.php"> CABANG</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_kasir/index_ks.php"> KASIR</a> 
+          </li>
       </div>
   </div>
 </nav>
 
 <!-- isi -->
+
     <div class="container" style="margin-top: 80px">
       <div class="row">
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header">
-              DATA SUPPLIER
+            <div class="card-footer ">
+              DATA BARANG
             </div>
             <div class="card-body">
+              <a href="home.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a>
               <table class="table table-bordered" id="myTable">
                 <thead>
-                <div><a href="home_sp.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a></div>
                   <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">No Hp</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">No Rekening</th>
+                  <th scope="col">ID_KASIR</th>
+                  <th scope="col">NAMA_CB</th>
+                    <th scope="col">NAMA</th>
+                    <th scope="col">ALAMAT</th>
+                    <th scope="col">NO HP</th>
+                    <th scope="col">JENIS_KELAMIN</th> 
+                    
+                    
                   </tr>
                 </thead>
                 <tbody>
                   <?php 
                       include('../konek.php');
                       $no = 1;
-                      $query = mysqli_query($connection,"SELECT * FROM tb_supplier");
-                      while($row = mysqli_fetch_array($query)){
-                  ?>
+                      $query = mysqli_query($connection,"SELECT * FROM tb_kasir inner join tb_cabang on tb_cabang.id_cabang=tb_kasir.id_cabang" );
+                      while($row = mysqli_fetch_array($query)){?>
 
                   <tr>
                       <td><?php echo $no++ ?></td>
-                      <td><?php echo $row['nama_sp'] ?></td>
-                      <td><?php echo $row['hp'] ?></td>
-                      <td><?php echo $row['alamat'] ?></td>
-                      <td><?php echo $row['no_rekening'] ?></td>
+                      <td><?php echo $row['nama_cb'] ?></td>
+                      <td><?php echo $row['nama_ks'] ?></td>
+                      <td><?php echo $row['alamat_ks'] ?></td>
+                      <td><?php echo $row['hp_ks'] ?></td>
+                      <td><?php echo $row['jenis_kelamin_ks'] ?></td>
+                      
+                      
                       <td class="text-center">
-                      <a href="edit.php?id=<?php echo $row['id_supplier'] ?>" class="btn btn-sm btn-primary">EDIT</a>
-                        <a href="hapus.php?id=<?php echo $row['id_supplier'] ?>" class="btn btn-sm btn-dark">HAPUS</a>
+                        <a href="edit.php?id=<?php echo $row['id_kasir'] ?>" class="btn btn-sm btn-primary">EDIT</a>
+                        <a href="hapus.php?id=<?php echo $row['id_kasir'] ?>" class="btn btn-sm btn-dark">HAPUS</a>
                       </td>
                   </tr>
 
                 <?php } ?>
                 </tbody>
-                      </table>
+              </table>
             </div>
           </div>
       </div>

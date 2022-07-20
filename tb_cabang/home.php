@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <title>PERUSAHAAN</title>
+    <title>Tambahkan CABANG</title>
   </head>
 
   <body>
@@ -14,42 +14,49 @@
         <div class="col-md-8 offset-md-2">
           <div class="card">
             <div class="card-header">
-              PERUSAHAAN
+              TAMBAH DATA
 
             </div>
             <div class="card-body">
               <form action="koneksi.php" method="POST">
+
+              <div class="form-group">
+                  <label>ID PERUSAHAAN</label>
+                <?php
+                      include '../konek.php';
+                     
+                      $query = mysqli_query($connection,"SELECT * FROM tb_perusahaan"); 
+                      $a=" ( ";
+                      $b=" ) ";?>
+                  <select name="id_perusahaan" class="form-control">
+                  <?php while($row1=mysqli_fetch_array($query)){?>
+                  <option value= "<?php echo $row1['id_perusahaan']?>"><?php echo $row1['id_perusahaan'].$a.$row1['nama_pn'].$b;?></option>
+                  <?php }   ?>
+                  </select> </div>
+
                 
                 <div class="form-group">
                   <label>Nama</label>
-                  <input type="text" name="nama_pn" class="form-control">
+                  <input type="text" name="nama_cb" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                   <label>Alamat</label>
-                  <input type="text" name="alamat" class="form-control">
+                  <input type="text" name="alamat_cb" class="form-control" required>
                 </div>
 
                 <div class="form-group">
-                  <label>No Hp</label>
-                  <input type="bigint" name="hp" class="form-control">
+                  <label>NO HP</label>
+                  <input type="bigint" name="hp_cb" class="form-control" required>
                 </div>
 
                 <div class="form-group">
                   <label>Email</label>
-                  <input type="email" name="email" class="form-control">
+                  <input type="email" name="email_cb" class="form-control" required>
                 </div>
 
-                <div class="form-group">
-                  <label>Tanggal Berdiri</label>
-                  <input type="date" name="tanggal_berdiri" class="form-control">
-                </div>
                 
-                <div class="form-group">
-                  <label>NpWp</label>
-                  <input type="bigint" name="npwp" class="form-control">
-                </div>
-                 <br>
+                
                 <button type="submit" class="btn btn-success">SIMPAN</button>
                 <button type="reset" class="btn btn-warning">RESET</button>
 

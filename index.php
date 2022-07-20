@@ -13,7 +13,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
       <div class="collapse navbar-collapse" id="navbarsExample04">
         <ul class="navbar-nav mr-auto">
@@ -31,6 +31,15 @@
           </li>
           <li class="nav-item">
           <a class="nav-link" href="../KASIR/tb_perusahaan/index_ps.php"> PERUSAHAAN</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../KASIR/tb_member/index_mm.php"> MEMBER</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../KASIR/tb_cabang/index_cb.php"> CABANG</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../KASIR/tb_kasir/index_ks.php"> KASIR</a> 
           </li>
       </div>
   </div>

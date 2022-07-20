@@ -32,12 +32,20 @@
           <li class="nav-item">
           <a class="nav-link" href="../tb_perusahaan/index_ps.php"> PERUSAHAAN</a> 
           </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_member/index_mm.php"> MEMBER</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_cabang/index_cb.php"> CABANG</a> 
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="../tb_kasir/index_ks.php"> KASIR</a> 
+          </li>
       </div>
   </div>
 </nav>
 
 <!-- isi -->
-
 
     <div class="container" style="margin-top: 80px">
       <div class="row">
@@ -49,6 +57,7 @@
             <div class="card-body">
               <table class="table table-bordered" id="myTable">
                 <thead>
+                  <div><a href="home.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a></div>
                   <tr>
                   <th scope="col">id</th>
                     <th scope="col">Nama</th>
@@ -64,7 +73,7 @@
 
                   <tr>
                       <td><?php echo $no++ ?></td>
-                      <td><?php echo $row['nama'] ?></td>
+                      <td><?php echo $row['nama_kt'] ?></td>
                       <td class="text-center">
                       <a href="edit.php?id=<?php echo $row['id_kategori'] ?>" class="btn btn-sm btn-primary">EDIT</a>
                         <a href="hapus.php?id=<?php echo $row['id_kategori'] ?>" class="btn btn-sm btn-dark">HAPUS</a>
@@ -74,7 +83,6 @@
                 <?php } ?>
                 </tbody>
               </table>
-              <a href="home.php" class="btn btn-md btn-info" style="margin-bottom: 10px">TAMBAH DATA</a>
             </div>
           </div>
       </div>
